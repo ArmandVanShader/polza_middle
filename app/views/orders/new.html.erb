@@ -1,0 +1,26 @@
+<h1>Оформление заказа</h1>
+
+<%= form_for @order do |form| %>
+	<p>Выберите ингредиенты, на которые у вас аллергия: </p>
+	<% for ingredient in @ingredients %>
+	    <div>
+	      <%= check_box_tag "allergen_ids[]", ingredient.id, @order.allergens.include?(ingredient) %>
+	      <%= ingredient.name %>
+	    </div>
+	<% end %>
+
+	<br>
+	<hr>
+	<br>
+
+	<p>Выберите желаемые блюда: </p>
+	<% for dish in @dishs %>
+	    <div>
+	      <%= check_box_tag "dish_ids[]", dish.id, @order.dishs.include?(dish) %>
+	      <%= dish.name %>
+	    </div>
+	<% end %>
+
+	<br>
+	<%= form.submit "Отправить" %>
+<% end %>

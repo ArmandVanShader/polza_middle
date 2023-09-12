@@ -1,0 +1,27 @@
+<% flash.each do |type, msg| %>
+  <div class="notice">
+    <%= msg %>
+  </div>
+<% end %>
+<a href="/orders">Все заказы</a>
+<br>
+<a href="/orders/new">Новый заказ</a>
+<br>
+<a href="/orders/generate/10">Генерировать новые заказы пакетно</a>
+<br>
+<a href="/orders/delete">Удалить все заказы</a>
+<br>
+<a href="/orders/summary">Сводка блюд для кухни</a>
+<br>
+<a href="/import">Импортировать ингредиенты и блюда из YML</a>
+
+<style>
+	.notice{
+		background: #ccc; border: 1px solid black; padding: 15px;
+	}
+
+	a{
+		display: inline-block;
+		padding: 2em;
+	}
+</style>

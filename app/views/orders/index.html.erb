@@ -1,0 +1,19 @@
+<table>
+	<tr style="background: #ccc">
+		<th>Время</th>
+		<th>Блюда</th>
+		<th>Аллергены</th>
+	</tr>
+	<% for o in @orders %>
+	<tr>
+		<td><%= o.created_at %></td>
+		<td><%= o.dishs.map(&:name).join(',')%></td>
+		<td><%= o.allergens.map(&:name).join(',')%></td>
+	</tr>
+	<% end %>
+</table>
+<style>
+	table,td{
+		border:1px solid black
+	}
+</style>
